@@ -78,8 +78,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\CleanUpAll.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\Clock\AnalogicClock.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\Clock\ClockTimer.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\Clock\DigitalClock.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\Clock\DigitalClockValue.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\DisplayFrame.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\DisplaySelectedObject.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\OptionsDisplay.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\OptionsDisplaySaveVar.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\PlayVideo.cs" />
+    <Compile Include="Assets\Customizable_Furnture\Source\Scripts\SimpleSwitchMaterial.cs" />
+    <Compile Include="Assets\Script\CustomerGagoo.cs" />
     <Compile Include="Assets\Script\Raycast.cs" />
     <Compile Include="Assets\Script\TouchEvent.cs" />
+    <Compile Include="Assets\Script\jspconnect\jspconnect.cs" />
     <Compile Include="Assets\Script\test.cs" />
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
@@ -118,6 +131,7 @@
     <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Customizable_Furnture\Readme\Readme.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
     <None Include="Assets\StreamingAssets\QCAR\Gagoo.xml" />
