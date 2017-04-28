@@ -10,7 +10,8 @@ using System.Text;
 
 
 public class Join : MonoBehaviour {
-    
+
+
     public InputField IDinput = null;
     public InputField Pwinput = null;
     HttpWebRequest wReq;
@@ -31,7 +32,9 @@ public class Join : MonoBehaviour {
 
         try
         {
-            url += "?User_Name="+IDinput.text+"&Password="+Pwinput.text;
+            string AesPw = GameObject.Find("AESManager").GetComponent<AESManager>().encryptAES256(Pwinput.text);
+
+            url += "?User_Name="+IDinput.text+"&Password="+AesPw;
             Uri uri = new Uri(url);
             wReq = (HttpWebRequest)WebRequest.Create(uri);
             wReq.Method = "POST";
