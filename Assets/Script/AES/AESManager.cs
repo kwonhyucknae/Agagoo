@@ -46,7 +46,7 @@ public class AESManager : MonoBehaviour {
             return null;
         }
     }
-  public static string decryptAES256(string encrypt)
+  public string decryptAES256(string encrypt)
     {
         try
         {

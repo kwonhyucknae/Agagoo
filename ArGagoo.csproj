@@ -90,7 +90,9 @@
     <Compile Include="Assets\Customizable_Furnture\Source\Scripts\PlayVideo.cs" />
     <Compile Include="Assets\Customizable_Furnture\Source\Scripts\SimpleSwitchMaterial.cs" />
     <Compile Include="Assets\Script\AES\AESManager.cs" />
-    <Compile Include="Assets\Script\CustomerGagoo.cs" />
+    <Compile Include="Assets\Script\CustomerGagoo\ChangeTest.cs" />
+    <Compile Include="Assets\Script\CustomerGagoo\Copy.cs" />
+    <Compile Include="Assets\Script\CustomerGagoo\CustomerGagoo.cs" />
     <Compile Include="Assets\Script\Login\Join.cs" />
     <Compile Include="Assets\Script\Raycast.cs" />
     <Compile Include="Assets\Script\TouchEvent.cs" />
