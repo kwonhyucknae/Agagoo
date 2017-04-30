@@ -95,6 +95,7 @@
     <Compile Include="Assets\Script\CustomerGagoo\Copy.cs" />
     <Compile Include="Assets\Script\CustomerGagoo\CustomerGagoo.cs" />
     <Compile Include="Assets\Script\Login\Join.cs" />
+    <Compile Include="Assets\Script\Login\Login.cs" />
     <Compile Include="Assets\Script\Raycast.cs" />
     <Compile Include="Assets\Script\TouchEvent.cs" />
     <Compile Include="Assets\Script\jspconnect\jspconnect.cs" />
