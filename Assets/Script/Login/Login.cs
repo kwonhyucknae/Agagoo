@@ -7,10 +7,15 @@ using System.IO;
 
 
 public class Login : MonoBehaviour {
+    public InputField IDinput;
+    public InputField Pwinput;
+    public bool LoginCheck = false;
+    public int NowLogin = 0;
 
     private IEnumerator FetchText()
     {
         string url = "http://127.0.0.1:8080/ArGagoo/UnityJsp/LoginGet.jsp";
+        url = url + "?User_Name=" + IDinput.text;
 
         WWW www = new WWW(url);
         char[] deCh = { ' ', ',' };
@@ -22,26 +27,31 @@ public class Login : MonoBehaviour {
             System.Console.WriteLine(s);
             Debug.Log(s);
         }
-
-        String test4 = @test;
-        String test2="nhk321";
-        Debug.Log(test4);
-        bool test3 = false;
-        if(test2.Equals(words[1]))
+        string AesPw = GameObject.Find("AESManager").GetComponent<AESManager>().decryptAES256(words[3]);
+        Debug.Log(AesPw);
+        if(IDinput.text.Equals(words[2])&&Pwinput.text.Equals(AesPw))
         {
-            test3 = true;
+            LoginCheck = true;
+            NowLogin =int.Parse(words[1]);
+            Debug.Log(NowLogin);
         }
-        Debug.Log(test3);
+        Debug.Log(LoginCheck);
     }
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(FetchText());
+       // StartCoroutine(FetchText());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+    public void LoginBtnClick()
+    {
+        StartCoroutine(FetchText());
+
+
+    }
     public class MyLogin
     {
         public string ID;

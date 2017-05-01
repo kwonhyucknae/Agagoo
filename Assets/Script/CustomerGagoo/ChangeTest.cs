@@ -6,7 +6,12 @@ public class ChangeTest : MonoBehaviour {
     public GameObject lamp;
     public GameObject[] lampco1=new GameObject[8];
 
+    public int basenum = 0;
     public int secondnum = 0;
+    public int onoff = 0;
+    public int shapecolor = 0;
+    public int bulbcolor = 0;
+
     public bool OnOff = false;
 
     public void change1(int num)
@@ -16,6 +21,7 @@ public class ChangeTest : MonoBehaviour {
             GameObject.Find("SingleLamp_Type12(Clone)").transform.FindChild("Base").transform.FindChild("Select Metal Atlas").transform.FindChild("SingleLampBase_Type12_Mat"+i).gameObject.SetActive(false);
         }
         GameObject.Find("SingleLamp_Type12(Clone)").transform.FindChild("Base").transform.FindChild("Select Metal Atlas").transform.FindChild("SingleLampBase_Type12_Mat" + num).gameObject.SetActive(true);
+        basenum = num;
     }
     public void changeshape(int num)
     {
@@ -40,6 +46,7 @@ public class ChangeTest : MonoBehaviour {
             GameObject.Find("SingleLamp_Type12(Clone)").transform.FindChild("LampScreens").transform.FindChild("Screen Select MODELS2").transform.FindChild("LampScreen_Type" + secondnum).transform.FindChild("Turn Light SWITCH2").transform.FindChild("OFF").gameObject.SetActive(true);
             OnOff = false;
         }
+        onoff = num;
 
     }
     public void changeColor(int num)
@@ -52,7 +59,7 @@ public class ChangeTest : MonoBehaviour {
 
             }
             GameObject.Find("SingleLamp_Type12(Clone)").transform.FindChild("LampScreens").transform.FindChild("Screen Select MODELS2").transform.FindChild("LampScreen_Type" + secondnum).transform.FindChild("Turn Light SWITCH2").transform.FindChild("ON").transform.FindChild("Select Lamp Screen Atlas").transform.FindChild("LampScreen_Type"+secondnum+"_Mat" + num).gameObject.SetActive(true);
-
+            shapecolor = num;
         }
         else if(OnOff==false)
         {
@@ -62,9 +69,9 @@ public class ChangeTest : MonoBehaviour {
 
             }
             GameObject.Find("SingleLamp_Type12(Clone)").transform.FindChild("LampScreens").transform.FindChild("Screen Select MODELS2").transform.FindChild("LampScreen_Type" + secondnum).transform.FindChild("Turn Light SWITCH2").transform.FindChild("ON").transform.FindChild("Select Lamp Screen Atlas").transform.FindChild("LampScreen_Type"+secondnum+"_Mat" + (num+8)).gameObject.SetActive(true);
-
+            shapecolor = num + 8;
         }
-
+        
     }
     public void changeBulbColor(int num)
     {
@@ -82,6 +89,7 @@ public class ChangeTest : MonoBehaviour {
             GameObject.Find("SingleLamp_Type12(Clone)").transform.FindChild("LampScreens").transform.FindChild("Screen Select MODELS2").transform.FindChild("LampScreen_Type" + secondnum).transform.FindChild("Turn Light SWITCH2").transform.FindChild("ON").transform.FindChild("Bulb Color Selection SWITCH").transform.FindChild("Bulb_yellow").gameObject.SetActive(true);
 
         }
+        bulbcolor = num;
     }
 
     // Use this for initialization
