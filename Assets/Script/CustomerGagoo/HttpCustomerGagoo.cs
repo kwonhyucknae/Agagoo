@@ -11,10 +11,16 @@ using System.Text;
 public class HttpCustomerGagoo : MonoBehaviour {
     HttpWebRequest wReq;
     HttpWebResponse wRes;
+    public Camera _mainCam = null;
     public int LoadLampcnt = 0;
     public GameObject Lampbtn;
     public GameObject[] Lampbtncnt;
+    public Button tzxc;
+    public int numtest = 0;
     public float Posy=-90f;
+    public string[] words;
+
+    private GameObject targetting;
     public void SaveGagoo()
     {
         ChangeTest ct = GameObject.Find("CustomerGagooManager").GetComponent<ChangeTest>();
@@ -80,7 +86,7 @@ public class HttpCustomerGagoo : MonoBehaviour {
         char[] deCh = { ' ', ',' };
         while (!www.isDone) yield return www;
         string test = www.text.ToString();
-        string[] words = test.Split(deCh);
+        words = test.Split(deCh);
         foreach (string s in words)
         {
             System.Console.WriteLine(s);
@@ -94,11 +100,22 @@ public class HttpCustomerGagoo : MonoBehaviour {
 
         for (int i = 0; i < LoadLampcnt; i++)
         {
-            
-            Lampbtncnt[i] = Instantiate(Lampbtn,GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content"));
-            //Lampbtncnt[i].transform.parent = GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content");
-            Lampbtncnt[i].transform.localPosition =new Vector3(140f,Posy,0);
-            Posy -= 60f;
+            if (i == 0)
+            {
+                Lampbtncnt[i] = Instantiate(Lampbtn, GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content"));
+                Lampbtncnt[i].active = true;
+                //Lampbtncnt[i].transform.parent = GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content");
+                Lampbtncnt[i].transform.localPosition = new Vector3(140f, -30f, 0);
+            }
+            else
+            {
+
+                Lampbtncnt[i] = Instantiate(Lampbtn, GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content"));
+                //Lampbtncnt[i].transform.parent = GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content");
+                Lampbtncnt[i].active = true;
+                Lampbtncnt[i].transform.localPosition = new Vector3(140f, Posy, 0);
+                Posy -= 60f;
+            }
         }
         Posy = -90f;
         Debug.Log(words[1]);
@@ -113,14 +130,75 @@ public class HttpCustomerGagoo : MonoBehaviour {
         //Lampbtncnt = new GameObject[LoadLampcnt];
 
     }
+
+    public void ClickedButton()
+    {
+        GameObject c=new GameObject();
+        Button.print(c);
+        GameObject s = this.gameObject;
+        Debug.Log(c);
+    }
+    public void ClickedTest(int numtest)
+    {
+
+        
+
+        //Debug.Log(ttt);
+    }
+
+    private GameObject GetClickedObject()
+    {
+        RaycastHit hit;
+        GameObject target = null;
+
+        Ray ray = _mainCam.ScreenPointToRay(Input.mousePosition);
+
+        if(true == (Physics.Raycast(ray.origin,ray.direction*10,out hit)))
+        {
+            target = hit.collider.gameObject;
+
+        }
+        return target;
+    }
+
+    public void DestroyInstantiate()
+    {
+        for(int i=0;i<LoadLampcnt;i++)
+        {
+            GameObject.Destroy(Lampbtncnt[i]);
+        }
+
+    }
+
+
     // Use this for initialization
     void Start () {
-		
+        _mainCam = Camera.main;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if(true==Input.GetMouseButtonDown(0))
+        {
+            targetting = GetClickedObject();
+
+            for(int i=0;i<LoadLampcnt;i++)
+            {
+                if(true==targetting.Equals(Lampbtncnt[i]))
+                {
+                    numtest = i+1;
+                }
+                else if(targetting.Equals(Lampbtn))
+                {
+                    numtest = 0;
+                }
+            }
+
+            Debug.Log(numtest);
+        }
 
 	}
+
+
 }

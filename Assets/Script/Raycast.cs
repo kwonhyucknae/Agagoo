@@ -27,6 +27,7 @@ public class Raycast : MonoBehaviour {
 	void Update () {
 		if(Input.GetMouseButton(0))
         {
+            HttpCustomerGagoo HCG = GameObject.Find("CustomerGagooManager").GetComponent<HttpCustomerGagoo>();
             Ray ray = ARCameraReference.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray,out hit))
@@ -60,6 +61,7 @@ public class Raycast : MonoBehaviour {
 
                     
                 }
+                
             }
         }
 	}
