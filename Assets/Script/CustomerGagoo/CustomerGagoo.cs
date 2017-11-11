@@ -97,7 +97,33 @@ public class CustomerGagoo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        Copy lamp = GameObject.Find("CopyManager").GetComponent<Copy>();
+        Controll popup = GameObject.Find("ControllManager").GetComponent<Controll>();
+
+        if (popup.Popup[1].active==false && popup.Popup[0].active==true)
+        {
+            lamp.LampClone.active = false;
+        }
+        if(popup.Popup[1].active==true && popup.Popup[5].active==false)
+        {
+            lamp.LampClone.active = true;
+        }
+        if(popup.Popup[1].active==true && popup.Popup[5].active==true)
+        {
+            lamp.LampClone.active = false;
+        }
+
+
+        if(popup.Popup[4].active==false)
+        {
+            MyLamp.active = false;
+        }
+        
+        if(popup.Popup[4].active==true && popup.Popup[5].active==true)
+        {
+            MyLamp.active = false;
+        }
+
 	}
     public void CreateDisplayTexture()
     {
