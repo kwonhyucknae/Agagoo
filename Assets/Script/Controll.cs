@@ -9,6 +9,7 @@ public class Controll : MonoBehaviour {
     public GameObject x;
     public GameObject threem;
     public GameObject Menubar;
+    public GameObject Arhelp;
     //1번은 FirstPage 2번은 CustomGagooPage 3번은 LoginPage 4번은 Join 5번은 MyCustomGagoo 6번은 MenuPopup
 
 	// Update is called once per frame
@@ -42,6 +43,7 @@ public class Controll : MonoBehaviour {
             if(now==0)//Ar 카메라에서 눌렀을때
             {
                 Popup[0].active = true;
+                Menubar.active = true;
             }
         }
 
@@ -129,6 +131,7 @@ public class Controll : MonoBehaviour {
         {
             cm.allpopup[i].active = false;
         }
+        Arhelp.active = true;
         Menubar.active = false;
     }
 }

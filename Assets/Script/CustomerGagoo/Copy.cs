@@ -10,6 +10,7 @@ public class Copy : MonoBehaviour {
     public GameObject[] Lampbtncnt;
     public GameObject CustomGagooPage;
     public GameObject[] allpopup;
+    public GameObject Menubar;
 	// Use this for initialization
 	void Start () {
         LampClone = Instantiate(Lamp);
@@ -39,6 +40,7 @@ public class Copy : MonoBehaviour {
         {
             allpopup[i].active = false;
         }
+        Menubar.active = false;
         Lamp.SetActive(false);
 
     }
