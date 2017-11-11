@@ -14,6 +14,7 @@ public class Join : MonoBehaviour {
 
     public InputField IDinput = null;
     public InputField Pwinput = null;
+    public GameObject JoinPopup;
     HttpWebRequest wReq;
     HttpWebResponse wRes;
     public String test2()
@@ -55,7 +56,7 @@ public class Join : MonoBehaviour {
                 resResult=
             }
             */
-
+            JoinPopup.active = false;
         }catch(WebException ex)
         {
             if(ex.Status==WebExceptionStatus.ProtocolError&&ex.Response!=null)

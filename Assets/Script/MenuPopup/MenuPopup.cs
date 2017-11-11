@@ -6,6 +6,7 @@ public class MenuPopup : MonoBehaviour {
 
     public GameObject loginchpopup;
     public GameObject CustomGagoopopup;
+    public GameObject MyCustomPopup;
     public GameObject MenuPop;
     public GameObject menu;
     public GameObject threem;
@@ -29,6 +30,24 @@ public class MenuPopup : MonoBehaviour {
             MenuPop.active = false;
             CustomGagoopopup.active = true;
             model.LampClone.active = true;
+            menu.active = true;
+            threem.active = true;
+            xbtn.active = false;
+        }
+    }
+
+    public void MyGagooModelView()
+    {
+        Login loginch = GameObject.Find("LoginManager").GetComponent<Login>();
+
+        if (loginch.LoginCheck == false)
+        {
+            loginchpopup.active = true;
+        }
+        else
+        {
+            MyCustomPopup.active = true;
+            MenuPop.active = false;
             menu.active = true;
             threem.active = true;
             xbtn.active = false;
