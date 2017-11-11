@@ -11,12 +11,13 @@ public class CustomerGagoo : MonoBehaviour {
     public int sixonoff = 1;
     public int sixshapecolor = 1;
     public int sixbulbcolor=1;
-
+    public GameObject MyLamp;
     public bool OnOff = false;
     public int[] sixt = new int[5];
     public void changeMycustomGagoo()
     {
         HttpCustomerGagoo HCG = GameObject.Find("CustomerGagooManager").GetComponent<HttpCustomerGagoo>();
+        MyLamp.active = true;
         sixgob = 1 + (HCG.numtest - 1) * 6;
         sixgobchange = 2 + (HCG.numtest - 1) * 6;
         sixonoff = 3 + (HCG.numtest - 1) * 6;

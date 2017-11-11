@@ -25,7 +25,7 @@ public class HttpCustomerGagoo : MonoBehaviour {
     {
         ChangeTest ct = GameObject.Find("CustomerGagooManager").GetComponent<ChangeTest>();
         Login login = GameObject.Find("LoginManager").GetComponent<Login>();
-        string url = "http://127.0.0.1:8080/ArGagoo/CustomGagoo/CustomGagooSave.jsp";
+        string url = "http://13.125.31.57:8080/ArGagooWar/CustomGagoo/CustomGagooSave.jsp";
         string cookie = null;
         string data = "kind = Lamp" + " & basenum = " + ct.basenum+" & shape = "+ct.secondnum+" & onoff = "+ct.onoff+" & shapecolor = "+ct.shapecolor+" & ID = "+login.NowLogin+" & bulbcolor = "+ct.bulbcolor;
 
@@ -79,7 +79,7 @@ public class HttpCustomerGagoo : MonoBehaviour {
     private IEnumerator LoadGagoo()
     {
         Login login = GameObject.Find("LoginManager").GetComponent<Login>();
-        string url = "http://127.0.0.1:8080/ArGagoo/CustomGagoo/CustomGagooLoad.jsp";
+        string url = "http://13.125.31.57:8080/ArGagooWar/CustomGagoo/CustomGagooLoad.jsp";
         url = url + "?ID=" + login.NowLogin;
 
         WWW www = new WWW(url);
@@ -192,6 +192,10 @@ public class HttpCustomerGagoo : MonoBehaviour {
                 else if(targetting.Equals(Lampbtn))
                 {
                     numtest = 0;
+                }
+                else
+                {
+
                 }
             }
 

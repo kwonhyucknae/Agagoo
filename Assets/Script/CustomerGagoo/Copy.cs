@@ -8,10 +8,12 @@ public class Copy : MonoBehaviour {
     public GameObject LampClone;
     public GameObject Lampbtn;
     public GameObject[] Lampbtncnt;
+    public GameObject CustomGagooPage;
 
 	// Use this for initialization
 	void Start () {
         LampClone = Instantiate(Lamp);
+        Lamp.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -25,6 +27,11 @@ public class Copy : MonoBehaviour {
     public void goAr()
     {
         LampClone.transform.parent = GameObject.Find("ImageTarget").transform;
+        LampClone.SetActive(true);
+        LampClone.transform.localScale += new Vector3(2, 2, 2);
+        CustomGagooPage.SetActive(false);
+        Lamp.SetActive(false);
+
     }
     public void loadcopybtn()
     {

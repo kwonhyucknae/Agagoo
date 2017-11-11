@@ -26,7 +26,7 @@ public class Join : MonoBehaviour {
     }
     public void PTTS()
     {
-        string url= "http://127.0.0.1:8080/ArGagoo/UnityJsp/LoginTest.jsp";
+        string url= "http://13.125.31.57:8080/ArGagooWar/UnityJsp/LoginTest.jsp";
         string cookie = null;
         string data = "User_Name=test"+"&"+"Password"+Pwinput.text;
 

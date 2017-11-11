@@ -14,7 +14,7 @@ public class Login : MonoBehaviour {
 
     private IEnumerator FetchText()
     {
-        string url = "http://127.0.0.1:8080/ArGagoo/UnityJsp/LoginGet.jsp";
+        string url = "http://13.125.31.57:8080/ArGagooWar/UnityJsp/LoginGet.jsp";
         url = url + "?User_Name=" + IDinput.text;
 
         WWW www = new WWW(url);
