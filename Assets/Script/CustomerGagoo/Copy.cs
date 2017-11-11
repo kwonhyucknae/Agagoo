@@ -9,7 +9,7 @@ public class Copy : MonoBehaviour {
     public GameObject Lampbtn;
     public GameObject[] Lampbtncnt;
     public GameObject CustomGagooPage;
-
+    public GameObject[] allpopup;
 	// Use this for initialization
 	void Start () {
         LampClone = Instantiate(Lamp);
@@ -29,7 +29,16 @@ public class Copy : MonoBehaviour {
         LampClone.transform.parent = GameObject.Find("ImageTarget").transform;
         LampClone.SetActive(true);
         LampClone.transform.localScale += new Vector3(2, 2, 2);
-        CustomGagooPage.SetActive(false);
+        LampClone.transform.localPosition = new Vector3(0f,0.3f,0);
+
+        Item sofa = GameObject.Find("ItemManager").GetComponent<Item>();
+        sofa.sofa.active = false;
+
+        //CustomGagooPage.SetActive(false);
+        for(int i=0;i<6;i++)
+        {
+            allpopup[i].active = false;
+        }
         Lamp.SetActive(false);
 
     }
