@@ -14,6 +14,7 @@ public class Login : MonoBehaviour {
     public GameObject LoginPopup;
     public GameObject LoginFailPopup;
     public string AesPw;
+    public Text LoginTxt;
     private IEnumerator FetchText()
     {
         string url = "http://13.125.31.57:8080/ArGagooWar/UnityJsp/LoginGet.jsp";
@@ -63,13 +64,18 @@ public class Login : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (LoginCheck == true)
+        {
+            LoginTxt.GetComponent<Text>().text = "로그아웃";
+        }
+        else if(LoginCheck==false)
+        {
+            LoginTxt.GetComponent<Text>().text = "로그인";
+        }
 	}
     public void LoginBtnClick()
     {
         StartCoroutine(FetchText());
-
-
 
     }
     public class MyLogin

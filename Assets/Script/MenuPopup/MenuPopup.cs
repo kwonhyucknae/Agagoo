@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MenuPopup : MonoBehaviour {
 
     public GameObject loginchpopup;
@@ -11,10 +11,25 @@ public class MenuPopup : MonoBehaviour {
     public GameObject menu;
     public GameObject threem;
     public GameObject xbtn;
-
+    
     void Start()
     {
       
+    }
+    public void LoginClick()
+    {
+        Login login = GameObject.Find("LoginManager").GetComponent<Login>();
+        Copy copy = GameObject.Find("CopyManager").GetComponent<Copy>();
+       if(login.LoginCheck==true)
+        {
+            login.LoginCheck = false;
+            login.NowLogin = 0;
+        }
+       else if(login.LoginCheck==false)
+        {
+            copy.allpopup[2].active = true;
+            copy.allpopup[5].active = false;
+        }
     }
 
     public void CustomGagooModelView()
