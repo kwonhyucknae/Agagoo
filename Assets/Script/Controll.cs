@@ -5,6 +5,9 @@ using UnityEngine;
 public class Controll : MonoBehaviour {
 
     public GameObject[] Popup;
+    public GameObject menu;
+    public GameObject x;
+    public GameObject threem;
     //1번은 FirstPage 2번은 CustomGagooPage 3번은 LoginPage 4번은 Join 5번은 MyCustomGagoo 6번은 MenuPopup
 
 	// Update is called once per frame
@@ -40,6 +43,71 @@ public class Controll : MonoBehaviour {
     {
         Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
         FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 0f, 0);
-
     }
+    public void ScrollControllGusil()
+    {
+        Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, -760f, 0);
+        for (int i = 1; i < 6; i++)
+        {
+            Popup[i].active = false;
+        }
+        menu.active = true;
+        threem.active = true;
+        x.active = false;
+    }
+    public void ScrollControllDining()
+    {
+        Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 15f, 0);
+        for (int i = 1; i < 6; i++)
+        {
+            Popup[i].active = false;
+        }
+
+        menu.active = true;
+        threem.active = true;
+        x.active = false;
+    }
+    public void ScrollControllJubang()
+    {
+        Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 800f, 0);
+        for (int i = 1; i < 6; i++)
+        {
+            Popup[i].active = false;
+        }
+
+        menu.active = true;
+        threem.active = true;
+        x.active = false;
+    }
+    public void ScrollControllChimsil()
+    {
+        Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 1600f, 0);
+        for (int i = 1; i < 6; i++)
+        {
+            Popup[i].active = false;
+        }
+
+        menu.active = true;
+        threem.active = true;
+        x.active = false;
+    }
+    public void ScrollControllSogae()
+    {
+        Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, -1530f, 0);
+        for (int i = 1; i < 6; i++)
+        {
+            Popup[i].active = false;
+        }
+
+        menu.active = true;
+        threem.active = true;
+        x.active = false;
+    }
+
+
 }
