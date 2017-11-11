@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class MenuPopup : MonoBehaviour {
     
-    public GameObject model;
+    
     void Start()
     {
-        model = GameObject.Find("SingleLamp_Type12").GetComponent<GameObject>();
-
+      
     }
 
     public void CustomGagooModelView()
     {
-        model.active = true;
+        Copy model=GameObject.Find("CopyManager").GetComponent<Copy>();
+        model.LampClone.active = true;
     }
 }
