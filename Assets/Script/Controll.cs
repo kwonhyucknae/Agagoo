@@ -5,7 +5,7 @@ using UnityEngine;
 public class Controll : MonoBehaviour {
 
     public GameObject[] Popup;
-	//1번은 FirstPage 2번은 CustomGagooPage 3번은 LoginPage 4번은 Join 5번은 MyCustomGagoo 6번은 MenuPopup
+    //1번은 FirstPage 2번은 CustomGagooPage 3번은 LoginPage 4번은 Join 5번은 MyCustomGagoo 6번은 MenuPopup
 
 	// Update is called once per frame
 	void Update () {
@@ -25,7 +25,7 @@ public class Controll : MonoBehaviour {
             if(now>=2 && now<=6)
             {
 
-                Popup[now].active = false;
+                Popup[now-1].active = false;
             }
 
             if(now==0)//Ar 카메라에서 눌렀을때
@@ -35,4 +35,11 @@ public class Controll : MonoBehaviour {
         }
 
 	}
+
+    public void ScrollControll()
+    {
+        Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 0f, 0);
+
+    }
 }

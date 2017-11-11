@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour {
 
     public GameObject sofa;
+    public GameObject FirstPageContent;
 	// Use this for initialization
 	void Start () {
 		
