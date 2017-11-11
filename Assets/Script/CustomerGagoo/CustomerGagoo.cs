@@ -104,6 +104,10 @@ public class CustomerGagoo : MonoBehaviour {
         {
             lamp.LampClone.active = false;
         }
+        if(popup.Popup[1].active==true && popup.Popup[4].active==true)
+        {
+            lamp.LampClone.active = false;
+        }
         if(popup.Popup[1].active==true && popup.Popup[5].active==false)
         {
             lamp.LampClone.active = true;

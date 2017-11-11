@@ -8,6 +8,7 @@ public class Controll : MonoBehaviour {
     public GameObject menu;
     public GameObject x;
     public GameObject threem;
+    public GameObject Menubar;
     //1번은 FirstPage 2번은 CustomGagooPage 3번은 LoginPage 4번은 Join 5번은 MyCustomGagoo 6번은 MenuPopup
 
 	// Update is called once per frame
@@ -24,11 +25,18 @@ public class Controll : MonoBehaviour {
             if(now==1)
             {
                 //종료
+                Application.Quit();
             }
             if(now>=2 && now<=6)
             {
 
                 Popup[now-1].active = false;
+                if(now==2)
+                {
+                    menu.active = true;
+                    threem.active = true;
+                    x.active = false;
+                }
             }
 
             if(now==0)//Ar 카메라에서 눌렀을때
@@ -109,5 +117,18 @@ public class Controll : MonoBehaviour {
         x.active = false;
     }
 
+    public void Arrevert()
+    {
+        Item item = GameObject.Find("ItemManager").GetComponent<Item>();
+        CustomerGagoo cg = GameObject.Find("CustomerGagooManager").GetComponent<CustomerGagoo>();
+        Copy cm = GameObject.Find("CopyManager").GetComponent<Copy>();
+        item.sofa.active = true;
+        cg.MyLamp.active = false;
 
+        for(int i=0;i<6;i++)
+        {
+            cm.allpopup[i].active = false;
+        }
+        Menubar.active = false;
+    }
 }
