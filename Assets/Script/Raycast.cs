@@ -47,7 +47,7 @@ public class Raycast : MonoBehaviour {
                     else
                     {
                         sofa.transform.Rotate(Vector3.right * -y);
-                        test.transform.Rotate(Vector3.right * 2*y);
+                        test.transform.Rotate(Vector3.right * 2*-y);
                     }
                     //클릭으로 회전됨
                    if(Input.GetMouseButtonDown(0))
