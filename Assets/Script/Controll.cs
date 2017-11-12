@@ -57,7 +57,7 @@ public class Controll : MonoBehaviour {
     public void ScrollControllGusil()
     {
         Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
-        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, -760f, 0);
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, -521f, 0);
         for (int i = 1; i < 6; i++)
         {
             Popup[i].active = false;
@@ -69,7 +69,7 @@ public class Controll : MonoBehaviour {
     public void ScrollControllDining()
     {
         Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
-        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 15f, 0);
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 366f, 0);
         for (int i = 1; i < 6; i++)
         {
             Popup[i].active = false;
@@ -82,7 +82,7 @@ public class Controll : MonoBehaviour {
     public void ScrollControllJubang()
     {
         Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
-        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 800f, 0);
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 1225f, 0);
         for (int i = 1; i < 6; i++)
         {
             Popup[i].active = false;
@@ -95,7 +95,7 @@ public class Controll : MonoBehaviour {
     public void ScrollControllChimsil()
     {
         Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
-        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 1600f, 0);
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, 2025f, 0);
         for (int i = 1; i < 6; i++)
         {
             Popup[i].active = false;
@@ -108,7 +108,7 @@ public class Controll : MonoBehaviour {
     public void ScrollControllSogae()
     {
         Item FirstPageContent = GameObject.Find("ItemManager").GetComponent<Item>();
-        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, -1530f, 0);
+        FirstPageContent.FirstPageContent.transform.localPosition = new Vector3(0f, -2025f, 0);
         for (int i = 1; i < 6; i++)
         {
             Popup[i].active = false;

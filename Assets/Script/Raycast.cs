@@ -15,7 +15,7 @@ public class Raycast : MonoBehaviour {
     private bool dragging = false;
 
     public GameObject sofa;
-
+    public GameObject test;
     public float x;
     public float y;
 
@@ -34,7 +34,7 @@ public class Raycast : MonoBehaviour {
             {
                 
                 Debug.Log("Hit : " + hit.collider.gameObject.name);
-                if (hit.collider.gameObject.name == "sofa")
+                if (hit.collider.gameObject.name == "sofa" || hit.collider.gameObject.name=="COLLIDER")
                 {
                     x = Input.GetAxis("Mouse X");
                     y = Input.GetAxis("Mouse Y");
@@ -42,21 +42,24 @@ public class Raycast : MonoBehaviour {
                     if(Mathf.Abs(x)>=Mathf.Abs(y))
                     {
                         sofa.transform.Rotate(Vector3.up * -x);
+                        test.transform.Rotate(Vector3.up * -x *3);
                     }
                     else
                     {
                         sofa.transform.Rotate(Vector3.right * -y);
+                        test.transform.Rotate(Vector3.right * 2*y);
                     }
-                    /*클릭으로 회전됨
+                    //클릭으로 회전됨
                    if(Input.GetMouseButtonDown(0))
                     {
                         Vector3 pos = Input.mousePosition;
-                        pos.z = 10;
+                        pos.z = 20;
                         Vector3 target = Camera.main.ScreenToWorldPoint(pos);
                         print("target" + target);
                         sofa.transform.LookAt(target);
+                        test.transform.LookAt(target);
                     }
-                    */
+                    //*/
                     //Categorypage.active = false;
 
                     
