@@ -105,7 +105,7 @@ public class HttpCustomerGagoo : MonoBehaviour {
                 Lampbtncnt[i] = Instantiate(Lampbtn, GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content"));
                 Lampbtncnt[i].active = true;
                 //Lampbtncnt[i].transform.parent = GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content");
-                Lampbtncnt[i].transform.localPosition = new Vector3(140f, -30f, 0);
+                Lampbtncnt[i].transform.localPosition = new Vector3(93f, -30f, 0);
             }
             else
             {
@@ -113,7 +113,7 @@ public class HttpCustomerGagoo : MonoBehaviour {
                 Lampbtncnt[i] = Instantiate(Lampbtn, GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content"));
                 //Lampbtncnt[i].transform.parent = GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content");
                 Lampbtncnt[i].active = true;
-                Lampbtncnt[i].transform.localPosition = new Vector3(140f, Posy, 0);
+                Lampbtncnt[i].transform.localPosition = new Vector3(93f, Posy, 0);
                 Posy -= 60f;
             }
         }
