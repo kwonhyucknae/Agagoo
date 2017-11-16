@@ -10,10 +10,21 @@ public class Controll : MonoBehaviour {
     public GameObject threem;
     public GameObject Menubar;
     public GameObject Arhelp;
-    //1번은 FirstPage 2번은 CustomGagooPage 3번은 LoginPage 4번은 Join 5번은 MyCustomGagoo 6번은 MenuPopup
+    public GameObject StartText;
+    public GameObject StartPage;
 
-	// Update is called once per frame
-	void Update () {
+    float timer;
+    int waitingTime,waitingTimetwo;
+    //1번은 FirstPage 2번은 CustomGagooPage 3번은 LoginPage 4번은 Join 5번은 MyCustomGagoo 6번은 MenuPopup
+    void Start()
+    {
+        timer = 0.0f;
+        waitingTime = 3;
+        waitingTimetwo = 6;
+
+    }
+    // Update is called once per frame
+    void Update () {
         int now=0;
 
 		if(Input.GetKeyDown(KeyCode.Escape))
@@ -47,7 +58,17 @@ public class Controll : MonoBehaviour {
             }
         }
 
-	}
+        timer += Time.deltaTime;
+        if(timer > waitingTime)
+        {
+            StartPage.active = false;
+        }
+        if (timer > waitingTimetwo)
+        {
+            StartText.active = false;
+        }
+
+    }
 
     public void ScrollControll()
     {

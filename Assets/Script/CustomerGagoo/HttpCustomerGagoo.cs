@@ -17,7 +17,7 @@ public class HttpCustomerGagoo : MonoBehaviour {
     public GameObject[] Lampbtncnt;
     public Button tzxc;
     public int numtest = 0;
-    public float Posy=-90f;
+    public float Posy=-110f;
     public string[] words;
 
     private GameObject targetting;
@@ -105,7 +105,7 @@ public class HttpCustomerGagoo : MonoBehaviour {
                 Lampbtncnt[i] = Instantiate(Lampbtn, GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content"));
                 Lampbtncnt[i].active = true;
                 //Lampbtncnt[i].transform.parent = GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content");
-                Lampbtncnt[i].transform.localPosition = new Vector3(93f, -30f, 0);
+                Lampbtncnt[i].transform.localPosition = new Vector3(93f, -60f, 0);
             }
             else
             {
@@ -114,10 +114,10 @@ public class HttpCustomerGagoo : MonoBehaviour {
                 //Lampbtncnt[i].transform.parent = GameObject.Find("MyCustomGagoo").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content");
                 Lampbtncnt[i].active = true;
                 Lampbtncnt[i].transform.localPosition = new Vector3(93f, Posy, 0);
-                Posy -= 60f;
+                Posy -= 50f;
             }
         }
-        Posy = -90f;
+        Posy = -110f;
         Debug.Log(words[1]);
         Debug.Log(words[7]);
         Debug.Log(LoadLampcnt);
